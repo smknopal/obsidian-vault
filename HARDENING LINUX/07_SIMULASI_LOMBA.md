@@ -1,0 +1,1 @@
+![[07_SIMULASI_LOMBA]]

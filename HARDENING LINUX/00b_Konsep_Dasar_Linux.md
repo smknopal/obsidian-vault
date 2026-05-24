@@ -1,0 +1,1 @@
+![[00b_Konsep_Dasar_Linux]]

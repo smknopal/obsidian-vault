@@ -1,0 +1,1 @@
+sudo apt update && sudo apt install -y nmap tcpdump tshark ufw fail2ban auditd audispd-plugins lsof htop vim git curl wget unzip build-essential python3-pip libpam-modules

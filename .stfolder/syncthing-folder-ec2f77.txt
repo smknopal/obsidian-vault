@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: z47mf-tcide
+created: 2026-02-12T23:26:28+07:00
