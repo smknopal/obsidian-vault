@@ -94,14 +94,13 @@
             "id": "aa19c25f576991f7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "IP BERMASALAH.md",
-                "mode": "source",
-                "source": false
+                "file": "Tanpa judul 3.base",
+                "viewName": "Tabel"
               },
-              "icon": "lucide-file",
-              "title": "IP BERMASALAH"
+              "icon": "lucide-table",
+              "title": "Tanpa judul 3"
             }
           }
         ],
@@ -248,13 +247,23 @@
               "icon": "lucide-list",
               "title": "Kerangka dari Welcome"
             }
+          },
+          {
+            "id": "cfcde26cb30fcdf0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -264,14 +273,16 @@
       "canvas:Buat kanvas baru": false,
       "daily-notes:Buka catatan hari ini": false,
       "templates:Masukkan template": false,
-      "command-palette:Buka palet perintah": false
+      "command-palette:Buka palet perintah": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "66bbd8df4e320ea1",
+  "active": "aa19c25f576991f7",
   "lastOpenFiles": [
+    "IP BERMASALAH.md",
+    "Tanpa judul 3.base",
     "README.md",
     "Tanpa judul 2.base",
-    "IP BERMASALAH.md",
     "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
     "HARDENING LINUX/02_PAM_Password_Complexity.md",
     "HARDENING LINUX/01_Network_Service_Security.md",
@@ -298,13 +309,11 @@
     "HARDENING LINUX.md",
     "Tanpa judul 2.md",
     "HARDENING/HARDENING LINUX/05 common linux misconfigurations.md",
-    "HARDENING/HARDENING LINUX/MENGATUR ROOT AKSES DAN AUDITD.md",
     "HARDENING/HARDENING LINUX",
     "HARDENING",
     "jurnal/Mei",
     "jurnal",
     "CRON JOB",
-    "Cyber security/SOLVE LINUX HARDENING",
     "Latihan Toji/Tanpa judul.canvas",
     "Tanpa judul.canvas"
   ]
