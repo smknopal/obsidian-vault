@@ -94,13 +94,14 @@
             "id": "aa19c25f576991f7",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Tanpa judul 3.base",
-                "viewName": "Tabel"
+                "file": "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Tanpa judul 3"
+              "icon": "lucide-file",
+              "title": "00b_Konsep_Dasar_Linux"
             }
           }
         ],
@@ -161,7 +162,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "b63188e9a6616c0b",
@@ -263,7 +265,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -279,17 +282,17 @@
   },
   "active": "aa19c25f576991f7",
   "lastOpenFiles": [
-    "IP BERMASALAH.md",
+    "HARDENING LINUX/00_PROGRESS_DAN_RENCANA_BELAJAR.md",
+    "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
     "Tanpa judul 3.base",
+    "IP BERMASALAH.md",
     "README.md",
     "Tanpa judul 2.base",
-    "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
     "HARDENING LINUX/02_PAM_Password_Complexity.md",
     "HARDENING LINUX/01_Network_Service_Security.md",
     "Tanpa judul 1.base",
     "HARDENING LINUX/06_Logging.md",
     "HARDENING LINUX/07_SIMULASI_LOMBA.md",
-    "HARDENING LINUX/00_PROGRESS_DAN_RENCANA_BELAJAR.md",
     "HARDENING LINUX/CHEATSHEET_CEPAT.md",
     "CHEATSHEET_CEPAT.md",
     "07_SIMULASI_LOMBA.md",
