@@ -96,7 +96,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_Network_Service_Security.md",
+                "file": "HARDENING LINUX/01_Network_Service_Security.md",
                 "mode": "source",
                 "source": false
               },
@@ -162,8 +162,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "b63188e9a6616c0b",
@@ -282,6 +281,11 @@
   },
   "active": "aa19c25f576991f7",
   "lastOpenFiles": [
+    "Cyber security/01-Linux-Hardening/Langkah-Langkah Memasang Public Key untuk SSH.md",
+    "Cyber security/01-Linux-Hardening/konfigurasi pam.d.md",
+    "Cyber security/01-Linux-Hardening/configurasi jail.conf.md",
+    "Cyber security/00-CHEATSEET/Cheat Sheet Perintah Dasar Linux untuk.md",
+    "01_Network_Service_Security.md",
     "IP BERMASALAH.md",
     "HARDENING LINUX/01_Network_Service_Security.md",
     "Tanpa judul 7.base",
@@ -308,14 +312,10 @@
     "HARDENING LINUX/03_PAM_Account_Lockout.md",
     "03_PAM_Account_Lockout.md",
     "02_PAM_Password_Complexity.md",
-    "01_Network_Service_Security.md",
     "00b_Konsep_Dasar_Linux.md",
     "Tanpa judul.base",
     "00_PROGRESS_DAN_RENCANA_BELAJAR.md",
     "HARDENING LINUX",
-    "HARDENING LINUX.md",
-    "Tanpa judul 2.md",
-    "HARDENING/HARDENING LINUX/05 common linux misconfigurations.md",
     "HARDENING/HARDENING LINUX",
     "Latihan Toji/Tanpa judul.canvas",
     "Tanpa judul.canvas"
