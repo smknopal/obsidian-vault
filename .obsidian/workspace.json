@@ -96,7 +96,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HARDENING LINUX/01_Network_Service_Security.md",
+                "file": "01_Network_Service_Security.md",
                 "mode": "source",
                 "source": false
               },
@@ -282,6 +282,8 @@
   },
   "active": "aa19c25f576991f7",
   "lastOpenFiles": [
+    "IP BERMASALAH.md",
+    "HARDENING LINUX/01_Network_Service_Security.md",
     "Tanpa judul 7.base",
     "Tanpa judul 6.base",
     "Tanpa judul 5.base",
@@ -289,11 +291,9 @@
     "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
     "HARDENING LINUX/00_PROGRESS_DAN_RENCANA_BELAJAR.md",
     "Tanpa judul 3.base",
-    "IP BERMASALAH.md",
     "README.md",
     "Tanpa judul 2.base",
     "HARDENING LINUX/02_PAM_Password_Complexity.md",
-    "HARDENING LINUX/01_Network_Service_Security.md",
     "Tanpa judul 1.base",
     "HARDENING LINUX/06_Logging.md",
     "HARDENING LINUX/07_SIMULASI_LOMBA.md",
@@ -317,7 +317,6 @@
     "Tanpa judul 2.md",
     "HARDENING/HARDENING LINUX/05 common linux misconfigurations.md",
     "HARDENING/HARDENING LINUX",
-    "HARDENING",
     "Latihan Toji/Tanpa judul.canvas",
     "Tanpa judul.canvas"
   ]
