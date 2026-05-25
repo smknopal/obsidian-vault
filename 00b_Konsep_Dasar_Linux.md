@@ -490,15 +490,15 @@ find / -perm -4000 -type f 2>/dev/null | sort
 
 ## ✅ Checklist Konsep Dasar (Pastikan Kamu Paham Ini Semua!)
 
-- [ ] Bisa navigasi direktori dengan `cd`, `ls`, `pwd`
-- [ ] Paham struktur `/etc`, `/var/log`, `/home`
-- [ ] Bisa baca file `/etc/passwd` dan memahami setiap kolomnya
-- [ ] Paham permission rwx dan bisa hitung angkanya (chmod)
-- [ ] Bisa ganti permission dengan `chmod` dan kepemilikan dengan `chown`
-- [ ] Paham apa itu SUID dan kenapa berbahaya
+- [x] Bisa navigasi direktori dengan `cd`, `ls`, `pwd`
+- [x] Paham struktur `/etc`, `/var/log`, `/home`
+- [x] Bisa baca file `/etc/passwd` dan memahami setiap kolomnya
+- [x] Paham permission rwx dan bisa hitung angkanya (chmod)
+- [x] Bisa ganti permission dengan `chmod` dan kepemilikan dengan `chown`
+- [x] Paham apa itu SUID dan kenapa berbahaya
 - [ ] Bisa kelola service dengan `systemctl`
-- [ ] Bisa baca output `ss -tulnp`
-- [ ] Bisa edit file dengan `nano`
+- [x] Bisa baca output `ss -tulnp`
+- [x] Bisa edit file dengan `nano`
 - [ ] Paham penggunaan `grep`, `find`, dan pipe `|`
 
 ---

@@ -96,12 +96,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
+                "file": "HARDENING LINUX/01_Network_Service_Security.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00b_Konsep_Dasar_Linux"
+              "title": "01_Network_Service_Security"
             }
           }
         ],
@@ -282,8 +282,12 @@
   },
   "active": "aa19c25f576991f7",
   "lastOpenFiles": [
-    "HARDENING LINUX/00_PROGRESS_DAN_RENCANA_BELAJAR.md",
+    "Tanpa judul 7.base",
+    "Tanpa judul 6.base",
+    "Tanpa judul 5.base",
+    "Tanpa judul 4.base",
     "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
+    "HARDENING LINUX/00_PROGRESS_DAN_RENCANA_BELAJAR.md",
     "Tanpa judul 3.base",
     "IP BERMASALAH.md",
     "README.md",
@@ -314,9 +318,6 @@
     "HARDENING/HARDENING LINUX/05 common linux misconfigurations.md",
     "HARDENING/HARDENING LINUX",
     "HARDENING",
-    "jurnal/Mei",
-    "jurnal",
-    "CRON JOB",
     "Latihan Toji/Tanpa judul.canvas",
     "Tanpa judul.canvas"
   ]
