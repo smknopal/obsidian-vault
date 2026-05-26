@@ -96,12 +96,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_Network_Service_Security.md",
+                "file": "IP BERMASALAH.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01_Network_Service_Security"
+              "title": "IP BERMASALAH"
             }
           }
         ],
@@ -281,9 +281,9 @@
   },
   "active": "aa19c25f576991f7",
   "lastOpenFiles": [
-    "IP BERMASALAH.md",
     "01_Network_Service_Security.md",
     "02_PAM_Password_Complexity.md",
+    "IP BERMASALAH.md",
     "CHEATSHEET_CEPAT.md",
     "INSTALL DOCKER.md",
     "00b_Konsep_Dasar_Linux.md",
