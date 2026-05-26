@@ -96,12 +96,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IP BERMASALAH.md",
+                "file": "HARDENING LINUX/01_Network_Service_Security.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IP BERMASALAH"
+              "title": "01_Network_Service_Security"
             }
           }
         ],
@@ -281,14 +281,14 @@
   },
   "active": "aa19c25f576991f7",
   "lastOpenFiles": [
+    "HARDENING LINUX/02_PAM_Password_Complexity.md",
+    "IP BERMASALAH.md",
     "01_Network_Service_Security.md",
     "02_PAM_Password_Complexity.md",
-    "IP BERMASALAH.md",
     "CHEATSHEET_CEPAT.md",
     "INSTALL DOCKER.md",
     "00b_Konsep_Dasar_Linux.md",
     "HARDENING LINUX/01_Network_Service_Security.md",
-    "HARDENING LINUX/02_PAM_Password_Complexity.md",
     "HARDENING LINUX/07_SIMULASI_LOMBA.md",
     "HARDENING LINUX/06_Logging.md",
     "HARDENING LINUX/04_Dangerous_Exposed_Services.md",
