@@ -1,1 +1,1 @@
-![[02_PAM_Password_Complexity]]
+ ![[02_PAM_Password_Complexity]]
