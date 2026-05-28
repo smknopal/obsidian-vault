@@ -96,12 +96,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HARDENING LINUX/02_PAM_Password_Complexity.md",
+                "file": "HARDENING LINUX/03_PAM_Account_Lockout.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02_PAM_Password_Complexity"
+              "title": "03_PAM_Account_Lockout"
             }
           }
         ],
@@ -282,8 +282,8 @@
   },
   "active": "aa19c25f576991f7",
   "lastOpenFiles": [
-    "HARDENING LINUX/01_Network_Service_Security.md",
     "HARDENING LINUX/02_PAM_Password_Complexity.md",
+    "HARDENING LINUX/01_Network_Service_Security.md",
     "IP BERMASALAH.md",
     "01_Network_Service_Security.md",
     "02_PAM_Password_Complexity.md",
