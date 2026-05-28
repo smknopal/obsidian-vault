@@ -96,12 +96,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HARDENING LINUX/01_Network_Service_Security.md",
+                "file": "MATERI BLUE TEAM/Mindset Defender · CIA Triad · MITRE ATT&CK · Siklus IR (NIST vs SANS).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01_Network_Service_Security"
+              "title": "Mindset Defender · CIA Triad · MITRE ATT&CK · Siklus IR (NIST vs SANS)"
             }
           }
         ],
@@ -162,7 +162,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b63188e9a6616c0b",
@@ -281,6 +282,7 @@
   },
   "active": "aa19c25f576991f7",
   "lastOpenFiles": [
+    "HARDENING LINUX/01_Network_Service_Security.md",
     "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
     "HARDENING LINUX/03_PAM_Account_Lockout.md",
     "HARDENING LINUX/07_SIMULASI_LOMBA.md",
@@ -290,7 +292,6 @@
     "03_PAM_Account_Lockout.md",
     "HARDENING LINUX/02_PAM_Password_Complexity.md",
     "Tanpa judul 9.base",
-    "HARDENING LINUX/01_Network_Service_Security.md",
     "MATERI BLUE TEAM/Mindset Defender · CIA Triad · MITRE ATT&CK · Siklus IR (NIST vs SANS).md",
     "Tanpa judul 1.base",
     "Tanpa judul 2.base",
