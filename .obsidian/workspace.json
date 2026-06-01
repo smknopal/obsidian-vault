@@ -96,12 +96,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HARDENING LINUX/03_PAM_Account_Lockout.md",
+                "file": "MATERI BLUE TEAM/Jadwal Belajar Blue Team LKS 2026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03_PAM_Account_Lockout"
+              "title": "Jadwal Belajar Blue Team LKS 2026"
             }
           }
         ],
@@ -281,16 +281,18 @@
   },
   "active": "aa19c25f576991f7",
   "lastOpenFiles": [
-    "HARDENING LINUX/02_PAM_Password_Complexity.md",
-    "Tanpa judul 10.base",
     "MATERI BLUE TEAM/Mindset Defender · CIA Triad · MITRE ATT&CK · Siklus IR (NIST vs SANS).md",
-    "HARDENING LINUX/01_Network_Service_Security.md",
-    "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
-    "HARDENING LINUX/03_PAM_Account_Lockout.md",
-    "HARDENING LINUX/07_SIMULASI_LOMBA.md",
-    "HARDENING LINUX/06_Logging.md",
+    "MATERI BLUE TEAM/Jadwal Belajar Blue Team LKS 2026.md",
+    "00_PROGRESS_DAN_RENCANA_BELAJAR.md",
     "HARDENING LINUX/05_Common_Linux_Misconfigurations.md",
     "HARDENING LINUX/04_Dangerous_Exposed_Services.md",
+    "HARDENING LINUX/03_PAM_Account_Lockout.md",
+    "HARDENING LINUX/02_PAM_Password_Complexity.md",
+    "Tanpa judul 10.base",
+    "HARDENING LINUX/01_Network_Service_Security.md",
+    "HARDENING LINUX/00b_Konsep_Dasar_Linux.md",
+    "HARDENING LINUX/07_SIMULASI_LOMBA.md",
+    "HARDENING LINUX/06_Logging.md",
     "03_PAM_Account_Lockout.md",
     "Tanpa judul 9.base",
     "Tanpa judul 1.base",
@@ -315,7 +317,6 @@
     "Tanpa judul 6.base",
     "Tanpa judul 5.base",
     "HARDENING LINUX/00_PROGRESS_DAN_RENCANA_BELAJAR.md",
-    "HARDENING LINUX/CHEATSHEET_CEPAT.md",
     "Latihan Toji/Tanpa judul.canvas",
     "Tanpa judul.canvas"
   ]
