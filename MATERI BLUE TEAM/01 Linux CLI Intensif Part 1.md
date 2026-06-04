@@ -165,7 +165,7 @@ grep -c "Failed" auth.log
 
 ```
 
-3
+3 
 
 ```
 
