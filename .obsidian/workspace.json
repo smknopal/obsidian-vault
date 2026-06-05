@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MATERI BLUE TEAM/02 Python CTF.md",
+                "file": "MATERI BLUE TEAM/Jadwal Belajar Blue Team LKS 2026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02 Python CTF"
+              "title": "Jadwal Belajar Blue Team LKS 2026"
             }
           }
         ],
@@ -268,11 +268,11 @@
   },
   "active": "8831b7b1784fa0b9",
   "lastOpenFiles": [
+    "MATERI BLUE TEAM/01 Linux CLI Intensif Part 1.md",
+    "MATERI BLUE TEAM/02 Python CTF.md",
     "HARDENING LINUX/01_Network_Service_Security.md",
     "HARDENING LINUX/02_PAM_Password_Complexity.md",
-    "MATERI BLUE TEAM/02 Python CTF.md",
     "MATERI BLUE TEAM/Jadwal Belajar Blue Team LKS 2026.md",
-    "MATERI BLUE TEAM/01 Linux CLI Intensif Part 1.md",
     "MATERI BLUE TEAM/00 Mindset Defender · CIA Triad · MITRE ATT&CK · Siklus IR (NIST vs SANS).md",
     "HARDENING LINUX/05_Common_Linux_Misconfigurations.md",
     "HARDENING LINUX/06_Logging.md",
