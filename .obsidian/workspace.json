@@ -145,8 +145,7 @@
               "title": "Penanda"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -266,7 +265,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d4366df9863e4970",
+  "active": "66bbd8df4e320ea1",
   "lastOpenFiles": [
     "HARDENING LINUX/07_SIMULASI_LOMBA.md",
     "Tanpa judul.md",
