@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tanpa judul.md",
+                "file": "IP BERMASALAH.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tanpa judul"
+              "title": "IP BERMASALAH"
             }
           }
         ],
@@ -265,10 +265,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "66bbd8df4e320ea1",
+  "active": "cf0b1a405e278696",
   "lastOpenFiles": [
-    "HARDENING LINUX/07_SIMULASI_LOMBA.md",
     "Tanpa judul.md",
+    "HARDENING LINUX/07_SIMULASI_LOMBA.md",
     "HARDENING LINUX/06_Logging.md",
     "HARDENING LINUX/05_Common_Linux_Misconfigurations.md",
     "HARDENING LINUX/04_Dangerous_Exposed_Services.md",
