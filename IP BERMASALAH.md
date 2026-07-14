@@ -1,190 +1,186 @@
-#lks #cyber-security #troubleshooting #network #virtualbox
+# Panduan Setup VM Baru — Blue Team / Hardening (LKS Cybersecurity)
 
-
-# 🛑 SOLUSI BOOTING LAMA (systemd-networkd-wait-online)
-#lks #cyber-security #linux #troubleshooting #cheatsheet
-
-> **Gejala:** VM tertahan (*stuck*) berlama-lama di layar hitam dengan teks:
-> `Job systemd-networkd-wait-online.service/start running (30s / no limit)`
-
-
-# 🌐 KAMUS CEPAT NETPLAN (Ubuntu Network Config)
-#lks #cyber-security #linux #networking #cheatsheet
-
-> ⚠️ **ATURAN MUTLAK NETPLAN (Format YAML):**
-> 1. **DILARANG pakai tombol TAB!** Gunakan murni **Spasi** (tiap level menjorok 2 spasi).
-> 2. **DILARANG duplikasi!** Jangan menulis nama *interface* yang sama (misal: `enp0s8`) dua kali dalam satu file.
-> 3. **Lokasi File:** Biasanya berada di `/etc/netplan/00-installer-config.yaml` atau `50-cloud-init.yaml`.
+Checklist ini dipakai **setiap kali kamu setup VM baru** untuk latihan atau simulasi lomba, supaya boot cepat, konsisten, dan siap untuk tugas hardening/defense.
 
 ---
 
-## 1️⃣ TEMPLATE IP STATIS (Manual)
-Gunakan ini jika panitia menyuruh mengatur IP ke angka spesifik.
-*(Edit menggunakan: `sudo nano /etc/netplan/nama_file.yaml`)*
+## 1. Kenapa Static IP > DHCP untuk Blue Team
+
+Untuk peran hardening/blue team, **static IP adalah rekomendasi utama**, bukan DHCP. Alasannya:
+
+| Aspek                            | Static IP                                      | DHCP                                                    |
+| -------------------------------- | ---------------------------------------------- | ------------------------------------------------------- |
+| Konsistensi untuk firewall rules | ✅ Alamat tetap, rules tidak perlu diubah       | ❌ Bisa berubah tiap lease renewal                       |
+| Korelasi log/SIEM                | ✅ Mudah trace log ke host tertentu             | ❌ IP berubah bikin log historis rancu                   |
+| Ketahanan terhadap gangguan DHCP | ✅ Tidak terpengaruh rogue DHCP/DHCP starvation | ❌ Rentan diserang (salah satu vektor attack umum)       |
+| Kecepatan boot                   | ✅ Tidak nunggu proses DHCP handshake           | ⚠️ Bisa nambah delay kalau DHCP server lambat/tidak ada |
+| Predictability saat lomba        | ✅ Kamu tahu persis IP tiap mesin               | ❌ Tidak ideal kalau dokumentasi topologi butuh IP tetap |
+
+**Kesimpulan: pakai Static IP** untuk semua mesin yang berperan sebagai target hardening/defense di lomba. DHCP hanya masuk akal kalau environment lomba memang mengharuskannya (baca aturan teknis lomba dulu).
+
+---
+
+## 2. Konfigurasi Static IP (Netplan — default Ubuntu modern)
+
+**Langkah 1 — Cek nama interface:**
+
+```bash
+ip a
+```
+
+Catat nama interface-nya (contoh: `ens33`, `eth0`, atau `enp0s3`).
+
+**Langkah 2 — Edit file netplan:**
+
+```bash
+ls /etc/netplan/
+sudo nano /etc/netplan/01-netcfg.yaml
+```
+
+**Langkah 3 — Isi konfigurasi static:**
 
 ```yaml
 network:
   version: 2
   renderer: networkd
   ethernets:
-    enp0s8:
+    ens33:                      # ganti sesuai nama interface kamu
       dhcp4: no
-      dhcp6: false
       addresses:
-        - 192.168.56.10/24
+        - 192.168.100.10/24     # sesuaikan dengan subnet lomba
+      routes:
+        - to: default
+          via: 192.168.100.1
+      nameservers:
+        addresses: [192.168.100.1, 8.8.8.8]
+```
 
-## 🔍 Penyebab Utama
-Sistem operasi tertahan karena sedang memaksakan diri "menunggu" balasan IP otomatis (DHCP) dari jaringan. Hal ini terjadi karena konfigurasi `netplan` yang bermasalah, atau DHCP Server dari *router*/VirtualBox memang tidak merespons. Sistem akan terus menunggu sampai batas waktunya (*timeout*) habis.
+**Langkah 4 — Terapkan konfigurasi:**
+
+```bash
+sudo netplan try      # test dulu, auto-rollback kalau gagal dalam 120 detik
+sudo netplan apply    # kalau sudah yakin
+```
+
+> ⚠️ **Penting:** kalau kamu remote via SSH, selalu pakai `netplan try` dulu — bukan langsung `apply` — supaya kalau IP salah, konfigurasi otomatis rollback dan kamu tidak terkunci dari VM.
+
+**Kalau pakai NetworkManager (Ubuntu Desktop):**
+
+```bash
+sudo nmcli con mod "Wired connection 1" ipv4.addresses 192.168.100.10/24
+sudo nmcli con mod "Wired connection 1" ipv4.gateway 192.168.100.1
+sudo nmcli con mod "Wired connection 1" ipv4.dns "192.168.100.1 8.8.8.8"
+sudo nmcli con mod "Wired connection 1" ipv4.method manual
+sudo nmcli con up "Wired connection 1"
+```
 
 ---
 
-## 🛠️ CARA MEMPERBAIKI (Pilih Salah Satu)
+## 3. Optimasi Boot Time (Aman untuk Blue Team)
 
-### 🚀 OPSI 1: Jurus Bypass Darurat (Sangat Disarankan saat Lomba)
-Jika kamu tidak ingin membuang waktu 2 menit setiap kali terpaksa me-*restart* VM, matikan saja fitur "menunggu" ini. Waktu *booting* VM akan langsung melesat kembali normal.
+Karena static IP tidak butuh proses DHCP handshake, `wait-online` biasanya jauh lebih cepat selesai secara natural. Tapi tetap lakukan ini:
 
-Jalankan perintah ini di terminal:
+**a. Perpendek timeout wait-online (JANGAN disable total)**
+
 ```bash
-sudo systemctl disable systemd-networkd-wait-online.service
-## 🚨 Gejala (Symptoms)
+sudo systemctl edit systemd-networkd-wait-online.service
+```
 
-1. Saat menjalankan `ip a`, _adapter_ jaringan kedua (misalnya `enp0s8`) statusnya `UP`, tetapi **tidak ada baris `inet` (IPv4 address)**.
-    
-2. Saat mencoba memancing IP dengan perintah `sudo dhclient enp0s8`, terminal hanya _loading_ (nge-_hang_) atau menampilkan layar hitam tanpa _output_ apa pun.
-    
-3. Tidak bisa di-SSH dari komputer fisik.
-    
+Isi:
 
-## 🔍 Akar Masalah (Root Causes)
+```ini
+[Service]
+ExecStart=
+ExecStart=/lib/systemd/systemd-networkd-wait-online --timeout=5
+```
 
-1. **Di sisi OS Linux:** Antarmuka jaringan belum dikonfigurasi secara otomatis oleh sistem operasi saat pertama kali diinstal (hanya antarmuka pertama/NAT yang otomatis jalan).
-    
-2. **Di sisi VirtualBox:** Fitur **DHCP Server** untuk jalur _Host-Only Network_ dalam keadaan mati (Nonaktif), sehingga saat Linux "berteriak" meminta IP, tidak ada _server_ yang membalas.
-    
+**b. Set interface yang tidak relevan supaya tidak ditunggu** Kalau ada interface tambahan (misal interface manajemen terpisah dari interface target), edit file `.network` terkait di `/etc/systemd/network/` dan tambahkan:
 
-## ✅ Solusi Bertahap (Playbook)
+```ini
+[Link]
+RequiredForOnline=no
+```
 
-### TAHAP 1: Pembatalan dan Cek Status
+**c. Disable ModemManager (aman total untuk blue team)**
 
-Jika terminal sedang _loading_ karena `dhclient`:
+```bash
+sudo systemctl disable ModemManager.service
+sudo systemctl mask ModemManager.service
+```
 
-1. Tekan `Ctrl + C` untuk membatalkan proses yang _hang_.
-    
-2. Pastikan nama _interface_ yang bermasalah dengan perintah:
-    
-    Bash
-    
-    ```
-    ip a
-    ```
-    
-    _(Catat namanya, misalnya: `enp0s8`)_.
-    
+**d. Cek ulang setelah perubahan**
 
-### TAHAP 2: Injeksi IP Manual (Cara Cepat / Darurat)
+```bash
+systemd-analyze blame
+systemd-analyze critical-chain
+```
 
-Gunakan ini jika kamu sedang buru-buru butuh akses SSH dan tidak mau repot mengatur VirtualBox. Ini akan memasang IP statis secara instan.
+---
 
-1. Tambahkan IP statis (sesuaikan dengan _subnet default_ VirtualBox, biasanya `192.168.56.x`):
-    
-    Bash
-    
-    ```
-    sudo ip addr add 192.168.56.10/24 dev enp0s8
-    ```
-    
-2. Nyalakan ulang _interface_ tersebut:
-    
-    Bash
-    
-    ```
-    sudo ip link set dev enp0s8 up
-    ```
-    
-3. Langsung buka terminal di Windows dan eksekusi SSH ke `192.168.56.10`. _(Kekurangan: IP ini akan hilang saat VM di-restart)._
-    
+## 4. Checklist Hardening Dasar Saat VM Baru Pertama Kali
 
-### TAHAP 3: Mengaktifkan DHCP di VirtualBox (Agar `dhclient` Jalan)
+Jalankan urutan ini **setiap kali** mulai dari VM baru/fresh install, sebelum masuk ke skenario lomba:
 
-Ini adalah akar masalah mengapa `dhclient` nge-_hang_.
+- [ ] **Update sistem**
+    
+    ```bash
+    sudo apt update && sudo apt upgrade -y
+    ```
+    
+- [ ] **Set static IP** (lihat bagian 2)
+- [ ] **Sinkronisasi waktu** (krusial untuk korelasi log!)
+    
+    ```bash
+    sudo apt install chrony -ysudo systemctl enable --now chronytimedatectl
+    ```
+    
+- [ ] **Firewall baseline aktif**
+    
+    ```bash
+    sudo ufw default deny incomingsudo ufw default allow outgoingsudo ufw allow sshsudo ufw enable
+    ```
+    
+- [ ] **Hardening SSH**
+    - Disable root login: `PermitRootLogin no` di `/etc/ssh/sshd_config`
+    - Pertimbangkan disable password auth, pakai key-based auth
+    - `sudo systemctl restart sshd`
+- [ ] **Aktifkan logging terpusat/lengkap**
+    
+    ```bash
+    sudo apt install auditd -ysudo systemctl enable --now auditd
+    ```
+    
+- [ ] **Cek service yang jalan, matikan yang tidak perlu**
+    
+    ```bash
+    systemctl list-units --type=service --state=running
+    ```
+    
+- [ ] **Cek user account, hapus/kunci akun yang tidak perlu**
+    
+    ```bash
+    cat /etc/passwd | grep -E '/bin/bash|/bin/sh'
+    ```
+    
+- [ ] **Backup/snapshot VM setelah baseline siap** — ini titik aman untuk rollback kalau ada eksperimen yang gagal saat latihan.
 
-1. Buka jendela utama aplikasi **VirtualBox**.
-    
-2. Klik menu **Tools** ➔ **Network Manager** (atau Host Network Manager).
-    
-3. Di tab **Host-only Networks**, pilih adapter jaringan yang terhubung ke VM kamu.
-    
-4. Buka tab **DHCP Server**.
-    
-5. Centang **Enable Server**.
-    
-    - _Server Address:_ `192.168.56.100`
-        
-    - _Server Mask:_ `255.255.255.0`
-        
-    - _Lower Address:_ `192.168.56.101`
-        
-    - _Upper Address:_ `192.168.56.254`
-        
-6. Klik **Apply**.
-    
-7. Kembali ke VM Linux, jalankan ulang:
-    
-    Bash
-    
-    ```
-    sudo dhclient enp0s8
-    ```
-    
-    _(Terminal tidak akan hang lagi, dan IP akan langsung terisi)._
-    
+---
 
-### TAHAP 4: Konfigurasi Permanen di Linux (Praktik Terbaik)
+## 5. Verifikasi Akhir Sebelum Dipakai Lomba
 
-Agar tidak perlu mengetik `dhclient` atau `ip addr add` setiap kali _server_ dihidupkan ulang, konfigurasikan Netplan.
+Reboot VM beberapa kali berturut-turut dan pastikan:
 
-1. Cari tahu nama _file_ konfigurasi jaringan:
-    
-    Bash
-    
-    ```
-    ls /etc/netplan/
-    ```
-    
-2. Edit _file_ tersebut (misal namanya `00-installer-config.yaml`):
-    
-    Bash
-    
-    ```
-    sudo nano /etc/netplan/00-installer-config.yaml
-    ```
-    
-3. Tambahkan konfigurasi `enp0s8` di bawah `ethernets`. **WAJIB gunakan spasi, dilarang menggunakan Tab!**
-    
-    YAML
-    
-    ```
-    network:
-      ethernets:
-        enp0s3:
-          dhcp4: true
-        enp0s8:
-          dhcp4: true
-      version: 2
-    ```
-    
-4. Terapkan konfigurasi:
-    
-    Bash
-    
-    ```
-    sudo netplan apply
-    ```
-    
-5. Verifikasi bahwa IP sudah menempel permanen:
-    
-    Bash
-    
-    ```
-    ip a
-    ```
+- [ ] Boot time konsisten cepat (catat waktunya dengan `systemd-analyze`)
+- [ ] IP address tetap sama setiap boot
+- [ ] Firewall tetap aktif otomatis setelah reboot
+- [ ] Logging service (auditd, rsyslog) jalan otomatis
+- [ ] Waktu sistem selalu akurat (chrony sync)
+- [ ] Tidak ada service gagal start (`systemctl --failed`)
+
+```bash
+systemctl --failed
+```
+
+---
+
+**Catatan akhir:** Simpan file ini dan jadikan checklist wajib tiap kali kamu setup ulang VM — baik untuk latihan mandiri maupun sebelum hari-H lomba.
