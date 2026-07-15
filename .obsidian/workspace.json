@@ -110,12 +110,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MODUL HARDENING LINUX BARU/MODULE 01 — BASELINE & RECON.md",
+                "file": "MODUL HARDENING LINUX BARU/MODULE 02 — NETWORK SERVICE SECURITY.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MODULE 01 — BASELINE & RECON"
+              "title": "MODULE 02 — NETWORK SERVICE SECURITY"
             }
           }
         ],
@@ -176,8 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b63188e9a6616c0b",
@@ -296,8 +295,9 @@
   },
   "active": "e52db4681fcba1c2",
   "lastOpenFiles": [
-    "Tanpa judul 2.md",
     "MODUL HARDENING LINUX BARU/MODULE 01 — BASELINE & RECON.md",
+    "MODUL HARDENING LINUX BARU/MODULE 02 — NETWORK SERVICE SECURITY.md",
+    "Tanpa judul 2.md",
     "MODUL HARDENING LINUX BARU",
     "Tanpa judul 14.base",
     "IP BERMASALAH.md",
@@ -323,7 +323,6 @@
     "HARDENING WINDOW/W6 — Logging & Audit Policy (Windows).md",
     "HARDENING WINDOW/W5 — Windows Defender (AV).md",
     "HARDENING WINDOW/Progress & Analisis.md",
-    "HARDENING WINDOW/W4 — Network Service Security (Windows).md",
     "HARDENING WINDOW",
     "WRITE UP",
     "Tanpa judul.canvas",
