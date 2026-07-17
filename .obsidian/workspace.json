@@ -110,12 +110,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MODUL HARDENING LINUX BARU/MODULE 02 — NETWORK SERVICE SECURITY.md",
+                "file": "MODUL WINDOWS HARDENING BARU/W1 Privileged Access Management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MODULE 02 — NETWORK SERVICE SECURITY"
+              "title": "W1 Privileged Access Management"
             }
           }
         ],
@@ -295,8 +295,10 @@
   },
   "active": "e52db4681fcba1c2",
   "lastOpenFiles": [
-    "MODUL HARDENING LINUX BARU/MODULE 01 — BASELINE & RECON.md",
     "MODUL HARDENING LINUX BARU/MODULE 02 — NETWORK SERVICE SECURITY.md",
+    "MODUL WINDOWS HARDENING BARU/W1 Privileged Access Management.md",
+    "MODUL WINDOWS HARDENING BARU",
+    "MODUL HARDENING LINUX BARU/MODULE 01 — BASELINE & RECON.md",
     "Tanpa judul 2.md",
     "MODUL HARDENING LINUX BARU",
     "Tanpa judul 14.base",
@@ -322,7 +324,6 @@
     "HARDENING WINDOW/W7 — LAPS Local Administrator Password Solution.md",
     "HARDENING WINDOW/W6 — Logging & Audit Policy (Windows).md",
     "HARDENING WINDOW/W5 — Windows Defender (AV).md",
-    "HARDENING WINDOW/Progress & Analisis.md",
     "HARDENING WINDOW",
     "WRITE UP",
     "Tanpa judul.canvas",
@@ -331,7 +332,6 @@
     "TEMPLATE BELAJAR",
     "DIGITAL FORENSIK",
     "CHEATSEET PYTHON",
-    "jurnal/Juni",
     "Latihan Toji/Tanpa judul.canvas"
   ]
 }
