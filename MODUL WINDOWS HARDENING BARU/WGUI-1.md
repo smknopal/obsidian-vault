@@ -1501,7 +1501,7 @@ Nilai hardening umum: Send NTLMv2 response only. Refuse LM & NTLM
 **GUI Path:** `secpol.msc → Local Policies → Security Options → cari awalan "User Account Control:"`
 
   
-
+ 
 ### Setting Inti
 
   
